@@ -1,0 +1,72 @@
+﻿@model PTCGUltraFanClub.Models.PokemonCard
+
+@{
+    ViewData["Title"] = "VaporeonDeck";
+}
+
+
+<h1>VaporeonDeck</h1>
+
+<!--
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="@**Model.ImageUrl" alt="@Model.PokemonName">
+        </div>
+        <div class="col">
+            <h2>@Model.Types - @Model.HP </h2>
+            <p></p>
+            <p>Ability: @Model.Ability</p>
+            <p>Attack: @Model.Attacks</p>
+            <p>Evolves From: @Model.EvolvesFrom</p>
+        </div>
+    </div>
+</div>
+
+ -->
+
+
+<div class="form-horizontal">
+
+    <hr />
+    <div class="form-group">
+
+
+        <table class="table table-responsive" style="width:400px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PokemonName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Attacks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EvolvesFrom)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PokemonName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ability)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Attacks)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EvolvesFrom)
+                </td>
+            </tr>
+
+            }
+
+        </table>
+    </div>
+</div>

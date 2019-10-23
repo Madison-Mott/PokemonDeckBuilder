@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="header">
+    <h1>Choose Your Deck!</h1>
+</div>
+
+<style>
+
+    .header {
+        padding: 30px;
+        border: 2px dashed #1C6EA4;
+        text-align: center;
+        background: #fff;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 17px;
+        letter-spacing: 4px;
+        word-spacing: -1px;
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
+
+    .pokemon-match {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin-top: 15px;
+        text-align: center;
+        box-shadow: 2px 2px 15px rgba( 0, 0, 0, 0.3 );
+    }
+
+        .pokemon-match > img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+    #vaporeon {
+        background-color: var(--brand-color-2);
+    }
+
+    #jolteon {
+        background-color: var(--brand-color-2);
+    }
+
+    #flareon {
+        background-color: var(--brand-color-2);
+    }
+</style>
+
+<form asp-controller="UserDeckChoices" asp-action="UserDeckChoice" method="post">
+    <div style="display: flex; flex-flow: row wrap; justify-content: space-around;">
+        <div id="vaporeon" class="pokemon-match">
+            <img src="https://img.pokemondb.net/sprites/emerald/normal/vaporeon.png" alt="Vaporeon">
+            <button type="submit" value="vaporeon-gx" name="questionResult">Vaporeon</button>
+        </div>
+        <div id="jolteon" class="pokemon-match">
+            <img src="https://img.pokemondb.net/sprites/firered-leafgreen/normal/jolteon.png" alt="Jolteon">
+            <button type="submit" value="Jolteon" name="questionResult">Jolteon</button>
+        </div>
+        <div id="flareon" class="pokemon-match">
+            <img src="https://img.pokemondb.net/sprites/firered-leafgreen/normal/flareon.png" alt="Flareon">
+            <button type="submit" value="Flareon" name="questionResult">Flareon</button>
+        </div>
+    </div>
+</form>
+
