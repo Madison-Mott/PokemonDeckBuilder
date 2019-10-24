@@ -13,6 +13,7 @@ namespace PTCGUltraFanClub.Models
         {
         }
 
-        public DbSet<PTCGUltraFanClub.Models.UserDeckChoice> UserDeckChoice { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserDeckChoice> UserDeckChoices { get; set; }
     }
 }
