@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PTCGUltraFanClub.Models;
 
 namespace PTCGUltraFanClub.Controllers
@@ -30,44 +31,47 @@ namespace PTCGUltraFanClub.Controllers
         }
 
         [HttpPost]
-        public IActionResult UserDeckChoice(string questionResult)
+        public async Task<IActionResult> UserDeckChoice(string questionResult)
         {
+            var (deckChoice, card) = ("", new PokemonCard());
+
             if (questionResult == "vaporeon-gx")
             {
-                PokemonCard cardName = new PokemonCard
-                {
-                    PokemonName = questionResult
-                };
-                return View("VaporeonDeck", cardName);
+                deckChoice = "VaporeonDeck";
+                card = await VaporeonDeck("vaporeon-gx");
             }
             else if (questionResult == "Jolteon")
             {
+                deckChoice = "JolteonDeck";
                 return View("JolteonDeck");
             }
             else if (questionResult == "Flareon")
             {
+                deckChoice = "FlareonDeck";
                 return View("FlareonDeck");
             }
 
-            return View();
-
+            return View(deckChoice, card);
         }
 
-        public async Task<IActionResult> VaporeonDeck(PokemonCard cardName)
-        { 
+        public async Task<PokemonCard> VaporeonDeck(string cardName)
+        {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
 
-            List<PokemonCard> PokemonInfo = new List<PokemonCard>();
+            PokemonCard PokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
-                var cardResponse = response.Content.ReadAsStringAsync().Result;
-
-                PokemonInfo = JsonConvert.DeserializeObject<List<PokemonCard>>(cardResponse);
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return View(PokemonInfo);
+            return PokemonInfo;
         }
+    
 
         public IActionResult JolteonDeck()
         {

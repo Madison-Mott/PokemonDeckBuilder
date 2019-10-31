@@ -4,14 +4,14 @@
     ViewData["Title"] = "VaporeonDeck";
 }
 
+<div class="header">
+<h1>You chose the Vaporeon Deck!</h1>
+</div>
 
-<h1>VaporeonDeck</h1>
-
-<!--
 <div class="container">
     <div class="row">
         <div class="col">
-            <img src="@**Model.ImageUrl" alt="@Model.PokemonName">
+            <img src="@Model.ImageUrl" alt="@Model.Name">
         </div>
         <div class="col">
             <h2>@Model.Types - @Model.HP </h2>
@@ -23,50 +23,21 @@
     </div>
 </div>
 
- -->
-
-
-<div class="form-horizontal">
-
-    <hr />
-    <div class="form-group">
-
-
-        <table class="table table-responsive" style="width:400px">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PokemonName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Ability)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Attacks)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EvolvesFrom)
-                </th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PokemonName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ability)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Attacks)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EvolvesFrom)
-                </td>
-            </tr>
-
-            }
-
-        </table>
-    </div>
-</div>
+<style>
+    .header {
+        padding: 30px;
+        border: 2px dashed #1C6EA4;
+        text-align: center;
+        background: #fff;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 17px;
+        letter-spacing: 4px;
+        word-spacing: -1px;
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
+</style>
