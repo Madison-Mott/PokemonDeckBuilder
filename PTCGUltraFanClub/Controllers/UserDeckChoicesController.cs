@@ -29,7 +29,7 @@ namespace PTCGUltraFanClub.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> UserDeckChoice(string questionResult)
         {
@@ -40,15 +40,15 @@ namespace PTCGUltraFanClub.Controllers
                 deckChoice = "VaporeonDeck";
                 card = await VaporeonDeck("vaporeon-gx");
             }
-            else if (questionResult == "Jolteon")
+            else if (questionResult == "jolteon-gx")
             {
                 deckChoice = "JolteonDeck";
-                return View("JolteonDeck");
+                card = await VaporeonDeck("jolteon-gx");
             }
-            else if (questionResult == "Flareon")
+            else if (questionResult == "flareon-gx")
             {
                 deckChoice = "FlareonDeck";
-                return View("FlareonDeck");
+                card = await VaporeonDeck("flareon-gx");
             }
 
             return View(deckChoice, card);
@@ -71,17 +71,43 @@ namespace PTCGUltraFanClub.Controllers
             }
             return PokemonInfo;
         }
-    
-
-        public IActionResult JolteonDeck()
+                
+        public async Task<PokemonCard> JolteonDeck(string cardName)
         {
-            return View();
+            _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
+            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+
+            PokemonCard PokemonInfo = new PokemonCard();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+            }
+            return PokemonInfo;
+        }
+        
+        public async Task<PokemonCard> FlareonDeck(string cardName)
+        {
+            _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
+            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+
+            PokemonCard PokemonInfo = new PokemonCard();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+            }
+            return PokemonInfo;
         }
 
-        public IActionResult FlareonDeck()
-        {
-            return View();
-        }
 
     }
 }

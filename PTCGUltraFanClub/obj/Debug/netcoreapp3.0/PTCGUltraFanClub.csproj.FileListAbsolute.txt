@@ -127,3 +127,4 @@ C:\Users\Madis\source\repos\PTCGUltraFanClub\PTCGUltraFanClub\obj\Debug\netcorea
 C:\Users\Madis\source\repos\PTCGUltraFanClub\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.dll
 C:\Users\Madis\source\repos\PTCGUltraFanClub\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.pdb
 C:\Users\Madis\source\repos\PTCGUltraFanClub\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\VaporeonDeck.cshtml.g.cs
+C:\Users\Madis\source\repos\PTCGUltraFanClub\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\JolteonDeck.cshtml.g.cs
