@@ -43,12 +43,17 @@ namespace PTCGUltraFanClub.Controllers
             else if (questionResult == "jolteon-gx")
             {
                 deckChoice = "JolteonDeck";
-                card = await VaporeonDeck("jolteon-gx");
+                card = await JolteonDeck("jolteon-gx");
             }
             else if (questionResult == "flareon-gx")
             {
                 deckChoice = "FlareonDeck";
-                card = await VaporeonDeck("flareon-gx");
+                card = await FlareonDeck("flareon-gx");
+            }
+            else if (questionResult == "gyarados-gx")
+            {
+                deckChoice = "GyaradosDeck";
+                card = await GyaradosDeck("gyarados-gX");
             }
 
             return View(deckChoice, card);
@@ -108,6 +113,23 @@ namespace PTCGUltraFanClub.Controllers
             return PokemonInfo;
         }
 
+        public async Task<PokemonCard> GyaradosDeck(string cardName)
+        {
+            _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
+            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+
+            PokemonCard PokemonInfo = new PokemonCard();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+            }
+            return PokemonInfo;
+        }
 
     }
 }

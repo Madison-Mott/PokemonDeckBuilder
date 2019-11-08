@@ -15,16 +15,22 @@
             <img src="@Model.ImageUrl" alt="@Model.Name">
         </div>
         <div class="col">
-            <h2>@Model.Name - @Model.HP </h2>
+            <h2>Name: @Model.Name - HP @Model.HP </h2>
             <p></p>
-            <p>Ability: @Model.Ability.Name</p>
-            <p>@Model.Ability.Text</p>
+            @if (Model.Ability != null)
+            {
+                Console.WriteLine($"Ability: + {Model.Ability.Text}");
+            }
             <p>
-                Attack: @for (var i = 0; i < Model.Attacks.Length; i++)
+                Attack: 
+                <br />@for (var i = 0; i < Model.Attacks.Length; i++)
                 {
                     var attack = Model.Attacks[i];
-                    <text>@attack.Name : @attack.Text</text>
+                <text>
+                    @attack.Name:@attack.Text
+                </text>
                 }
+                <br />
             <p>Evolves From: @Model.EvolvesFrom</p>
         </div>
     </div>
