@@ -50,10 +50,10 @@ namespace PTCGUltraFanClub.Controllers
                 deckChoice = "FlareonDeck";
                 card = await FlareonDeck("flareon-gx");
             }
-            else if (questionResult == "gyarados-gx")
+            else if (questionResult == "sm4-101")
             {
                 deckChoice = "GyaradosDeck";
-                card = await GyaradosDeck("gyarados-gX");
+                card = await GyaradosDeck("sm4-101");
             }
 
             return View(deckChoice, card);
@@ -113,10 +113,10 @@ namespace PTCGUltraFanClub.Controllers
             return PokemonInfo;
         }
 
-        public async Task<PokemonCard> GyaradosDeck(string cardName)
+        public async Task<PokemonCard> GyaradosDeck(string cardId)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
-            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={cardId}");
 
             PokemonCard PokemonInfo = new PokemonCard();
 
@@ -131,5 +131,10 @@ namespace PTCGUltraFanClub.Controllers
             return PokemonInfo;
         }
 
+        public/* async Task<PokemonCard>*/ void ReturnFullDeck()
+        {
+            //list 
+            //may be able to sort by card name and Id from API, just need to find out exactly which cards are in those gx decks 
+        }
     }
 }

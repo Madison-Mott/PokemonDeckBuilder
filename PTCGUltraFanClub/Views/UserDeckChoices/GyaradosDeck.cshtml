@@ -22,14 +22,17 @@
                 Console.WriteLine($"Ability: + {Model.Ability.Text}");
             }
             <p>
-                Attack: 
+                <strong>Attack(s):</strong>
                 <br />@for (var i = 0; i < Model.Attacks.Length; i++)
                 {
                     var attack = Model.Attacks[i];
                 <text>
-                    @attack.Name:@attack.Text
+                <br/>
+                <strong>@attack.Name</strong> @attack.Text
+                    <strong>@attack.Damage</strong>
+                    <br />
                 </text>
-                }
+            }
                 <br />
             <p>Evolves From: @Model.EvolvesFrom</p>
         </div>
@@ -54,4 +57,5 @@
         font-variant: normal;
         text-transform: none;
     }
+
 </style>

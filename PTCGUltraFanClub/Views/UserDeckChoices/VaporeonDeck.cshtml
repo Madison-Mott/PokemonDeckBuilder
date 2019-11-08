@@ -14,24 +14,38 @@
             <img src="@Model.ImageUrl" alt="@Model.Name">
         </div>
         <div class="col">
-            <h2>@Model.Name - @Model.HP </h2>
+            <h2>Name: @Model.Name - HP @Model.HP </h2>
             <p></p>
             @if (Model.Ability != null)
             {
                 Console.WriteLine($"Ability: + {Model.Ability.Text}");
             }
             <p>
-                Attack: @for (var i = 0; i < Model.Attacks.Length; i++)
+                <strong>Attack(s):</strong>
+                <br />@for (var i = 0; i < Model.Attacks.Length; i++)
                 {
                     var attack = Model.Attacks[i];
-                    <text>@attack.Name : @attack.Text</text>
+                    <text>
+                        <br />
+                        <strong>@attack.Name</strong> @attack.Text
+                        <strong>@attack.Damage</strong>
+                        <br />
+                    </text>
                 }
+                <br />
             <p>Evolves From: @Model.EvolvesFrom</p>
         </div>
     </div>
 </div>
 
+<br />
+
+<div>
+    @Html.ActionLink("See Full Deck", "ReturnFullDeck", "UserDeckChoices")
+</div>
+
 <style>
+
     .header {
         padding: 30px;
         border: 2px dashed #1C6EA4;
@@ -48,4 +62,5 @@
         font-variant: normal;
         text-transform: none;
     }
+
 </style>

@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Madis\\source\\repos\\PTCGUltraFanClub\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj": {}
+    "C:\\Users\\mmott\\Desktop\\PTCG\\PokemonDeckBuilder\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Madis\\source\\repos\\PTCGUltraFanClub\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj": {
+    "C:\\Users\\mmott\\Desktop\\PTCG\\PokemonDeckBuilder\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Madis\\source\\repos\\PTCGUltraFanClub\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj",
+        "projectUniqueName": "C:\\Users\\mmott\\Desktop\\PTCG\\PokemonDeckBuilder\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj",
         "projectName": "PTCGUltraFanClub",
-        "projectPath": "C:\\Users\\Madis\\source\\repos\\PTCGUltraFanClub\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj",
-        "packagesPath": "C:\\Users\\Madis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Madis\\source\\repos\\PTCGUltraFanClub\\PTCGUltraFanClub\\obj\\",
+        "projectPath": "C:\\Users\\mmott\\Desktop\\PTCG\\PokemonDeckBuilder\\PTCGUltraFanClub\\PTCGUltraFanClub.csproj",
+        "packagesPath": "C:\\Users\\mmott\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mmott\\Desktop\\PTCG\\PokemonDeckBuilder\\PTCGUltraFanClub\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Madis\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\mmott\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
