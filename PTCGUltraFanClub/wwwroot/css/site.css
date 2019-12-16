@@ -67,8 +67,11 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    background-image: url("https://wallpapercave.com/wp/RBpf6Dr.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 60px;
 }
 .footer {
   position: absolute;
