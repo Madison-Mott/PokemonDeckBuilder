@@ -383,7 +383,6 @@ C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcor
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\FlareonDeck.cshtml.g.cs
-C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\GyaradosDeck.cshtml.g.cs
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\JolteonDeck.cshtml.g.cs
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\VaporeonDeck.cshtml.g.cs
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
@@ -394,3 +393,4 @@ C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcor
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.csproj.CopyComplete
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.dll
 C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.pdb
+C:\Users\Madis\source\repos\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\SylveonDeck.cshtml.g.cs
