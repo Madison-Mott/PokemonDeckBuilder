@@ -62,15 +62,15 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    background: url(https://wallpapercave.com/wp/RBpf6Dr.jpg),url(https://i.pinimg.com/564x/38/35/84/383584ed28a8e0efd0c1903c17f3e91c.jpg) no-repeat center fixed;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 body {
     /* Margin bottom by footer height */
-    background-image: url("https://wallpapercave.com/wp/RBpf6Dr.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
     margin-bottom: 60px;
 }
 .footer {
