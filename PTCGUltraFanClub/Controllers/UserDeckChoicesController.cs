@@ -50,10 +50,10 @@ namespace PTCGUltraFanClub.Controllers
                 deckChoice = "FlareonDeck";
                 card = await FlareonDeck("flareon-gx");
             }
-            else if (questionResult == "sylveon-gx")
+            else if (questionResult == "sm2-140")
             {
                 deckChoice = "SylveonDeck";
-                card = await SylveonDeck("sylveon-gx");
+                card = await SylveonDeck("sm2-140");
             }
 
             return View(deckChoice, card);
@@ -113,10 +113,10 @@ namespace PTCGUltraFanClub.Controllers
             return PokemonInfo;
         }
 
-        public async Task<PokemonCard> SylveonDeck(string cardName)
+        public async Task<PokemonCard> SylveonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
-            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
             PokemonCard PokemonInfo = new PokemonCard();
 
