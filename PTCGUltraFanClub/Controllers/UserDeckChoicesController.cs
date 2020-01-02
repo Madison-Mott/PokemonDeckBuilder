@@ -50,30 +50,30 @@ namespace PTCGUltraFanClub.Controllers
                 deckChoice = "FlareonDeck";
                 card = await FlareonDeck("flareon-gx");
             }
-            else if (questionResult == "sm1-140")
+            else if (questionResult == "sm1-152")
             {
                 deckChoice = "EspeonDeck";
-                card = await EspeonDeck("sm1-140");
+                card = await EspeonDeck("sm1-152");
             }
-            else if (questionResult == "sm1-142")
+            else if (questionResult == "sm1-154")
             {
                 deckChoice = "UmbreonDeck";
-                card = await UmbreonDeck("sm1-142");
+                card = await UmbreonDeck("sm1-154");
             }
-            else if (questionResult == "sm2-140")
+            else if (questionResult == "sm2-158")
             {
                 deckChoice = "SylveonDeck";
-                card = await SylveonDeck("sm2-140");
+                card = await SylveonDeck("sm2-158");
             }
-            else if (questionResult == "leafeon-gx")
+            else if (questionResult == "sm5-157")
             {
                 deckChoice = "LeafeonDeck";
-                card = await LeafeonDeck("leafeon-gx");
+                card = await LeafeonDeck("sm5-157");
             }
-            else if (questionResult == "glaceon-gx")
+            else if (questionResult == "sm5-159")
             {
                 deckChoice = "GlaceonDeck";
-                card = await GlaceonDeck("glaceon-gx");
+                card = await GlaceonDeck("sm5-159");
             }
 
             return View(deckChoice, card);
@@ -183,10 +183,10 @@ namespace PTCGUltraFanClub.Controllers
             }
             return PokemonInfo;
         }
-        public async Task<PokemonCard> LeafeonDeck(string cardName)
+        public async Task<PokemonCard> LeafeonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
-            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
             PokemonCard PokemonInfo = new PokemonCard();
 
@@ -200,10 +200,10 @@ namespace PTCGUltraFanClub.Controllers
             }
             return PokemonInfo;
         }
-        public async Task<PokemonCard> GlaceonDeck(string cardName)
+        public async Task<PokemonCard> GlaceonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
-            HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
             PokemonCard PokemonInfo = new PokemonCard();
 
