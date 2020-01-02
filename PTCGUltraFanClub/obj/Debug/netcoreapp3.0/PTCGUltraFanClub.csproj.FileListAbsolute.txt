@@ -396,3 +396,5 @@ C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcor
 C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\PTCGUltraFanClub.pdb
 C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\LeafeonDeck.cshtml.g.cs
 C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\GlaceonDeck.cshtml.g.cs
+C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\EspeonDeck.cshtml.g.cs
+C:\Users\mmott\Desktop\PTCG\PokemonDeckBuilder\PTCGUltraFanClub\obj\Debug\netcoreapp3.0\Razor\Views\UserDeckChoices\UmbreonDeck.cshtml.g.cs

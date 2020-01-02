@@ -50,6 +50,16 @@ namespace PTCGUltraFanClub.Controllers
                 deckChoice = "FlareonDeck";
                 card = await FlareonDeck("flareon-gx");
             }
+            else if (questionResult == "sm1-140")
+            {
+                deckChoice = "EspeonDeck";
+                card = await EspeonDeck("sm1-140");
+            }
+            else if (questionResult == "sm1-142")
+            {
+                deckChoice = "UmbreonDeck";
+                card = await UmbreonDeck("sm1-142");
+            }
             else if (questionResult == "sm2-140")
             {
                 deckChoice = "SylveonDeck";
@@ -122,7 +132,40 @@ namespace PTCGUltraFanClub.Controllers
             }
             return PokemonInfo;
         }
+        public async Task<PokemonCard> EspeonDeck(string id)
+        {
+            _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
+            PokemonCard PokemonInfo = new PokemonCard();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+            }
+            return PokemonInfo;
+        }
+        public async Task<PokemonCard> UmbreonDeck(string id)
+        {
+            _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
+            HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
+
+            PokemonCard PokemonInfo = new PokemonCard();
+
+            if (response.IsSuccessStatusCode)
+            {
+                var cardResponse = await response.Content.ReadAsStringAsync();
+                var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
+                var cards = responseObject.SelectToken("cards").ToObject<JArray>();
+                var card = cards[0];
+                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+            }
+            return PokemonInfo;
+        }
         public async Task<PokemonCard> SylveonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");

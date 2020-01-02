@@ -1,0 +1,67 @@
+﻿@model PokemonCard
+
+@{
+    ViewData["Title"] = "EspeonDeck";
+}
+
+
+<div class="header">
+    <h1>You chose the Espeon Deck!</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="@Model.ImageUrl" alt="@Model.Name">
+        </div>
+        <div class="col">
+            <h2>Name: @Model.Name - HP @Model.HP </h2>
+            <p></p>
+            @if (Model.Ability != null)
+            {
+                Console.WriteLine($"Ability: + {Model.Ability.Text}");
+            }
+            <p>
+                <strong>Attack(s):</strong>
+                <br />@for (var i = 0; i < Model.Attacks.Length; i++)
+                {
+                    var attack = Model.Attacks[i];
+                <text>
+                <br/>
+                <strong>@attack.Name</strong> @attack.Text
+                    <strong>@attack.Damage</strong>
+                    <br />
+                </text>
+            }
+                <br />
+            <p>Evolves From: @Model.EvolvesFrom</p>
+        </div>
+    </div>
+</div>
+
+<style>
+
+    .header {
+        padding: 30px;
+        border: 2px dashed #1C6EA4;
+        text-align: center;
+        background: #fff;
+        font-family: "Pokemon GB";
+        font-size: 17px;
+        letter-spacing: 4px;
+        word-spacing: -1px;
+        color: #000000;
+        font-weight: 400;
+        text-decoration: none solid rgb(68, 68, 68);
+        font-style: normal;
+        font-variant: normal;
+        text-transform: none;
+    }
+    
+    @@font-face {
+         font-family: 'Pokemon GB';
+	     src: url('https://cdn.rawgit.com/Superpencil/pokemon-font/d36892e5/fonts/pokemon-font.eot');
+	     src: url('https://cdn.rawgit.com/Superpencil/pokemon-font/d36892e5/fonts/pokemon-font.woff');
+         font-weight: 400;
+    }
+</style>
