@@ -8,7 +8,7 @@ namespace PTCGUltraFanClub.Models
 {
     public class PTCGUltraFanClubContext : DbContext
     {
-        public PTCGUltraFanClubContext (DbContextOptions<PTCGUltraFanClubContext> options)
+        public PTCGUltraFanClubContext(DbContextOptions<PTCGUltraFanClubContext> options)
             : base(options)
         {
         }

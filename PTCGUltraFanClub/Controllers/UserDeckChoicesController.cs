@@ -29,7 +29,7 @@ namespace PTCGUltraFanClub.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         public async Task<IActionResult> UserDeckChoice(string questionResult)
         {
@@ -84,7 +84,7 @@ namespace PTCGUltraFanClub.Controllers
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -92,17 +92,17 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
-                
+
         public async Task<PokemonCard> JolteonDeck(string cardName)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -110,17 +110,17 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
-        
+
         public async Task<PokemonCard> FlareonDeck(string cardName)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?name={cardName}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -128,16 +128,16 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
         public async Task<PokemonCard> EspeonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -145,16 +145,16 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
         public async Task<PokemonCard> UmbreonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -162,16 +162,16 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
         public async Task<PokemonCard> SylveonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -179,16 +179,16 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
         public async Task<PokemonCard> LeafeonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -196,16 +196,16 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
         public async Task<PokemonCard> GlaceonDeck(string id)
         {
             _client.BaseAddress = new Uri("https://api.pokemontcg.io/v1/");
             HttpResponseMessage response = await _client.GetAsync($"cards?id={id}");
 
-            PokemonCard PokemonInfo = new PokemonCard();
+            PokemonCard pokemonInfo = new PokemonCard();
 
             if (response.IsSuccessStatusCode)
             {
@@ -213,15 +213,15 @@ namespace PTCGUltraFanClub.Controllers
                 var responseObject = JsonConvert.DeserializeObject<JObject>(cardResponse);
                 var cards = responseObject.SelectToken("cards").ToObject<JArray>();
                 var card = cards[0];
-                PokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
+                pokemonInfo = JsonConvert.DeserializeObject<PokemonCard>(card.ToString());
             }
-            return PokemonInfo;
+            return pokemonInfo;
         }
 
         public/* async Task<PokemonCard>*/ void ReturnFullDeck()
         {
-            //list 
-            //may be able to sort by card name and Id from API, just need to find out exactly which cards are in those gx decks 
+            //list
+            //may be able to sort by card name and Id from API, just need to find out exactly which cards are in those gx decks
         }
     }
 }
